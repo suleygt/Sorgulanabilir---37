@@ -4,12 +4,13 @@ import PostContent from './PostContent'
 import postData from '../postData'
 
 export default function DebatePost() {
-  const [comments, setComments] = useState([]);
   const [formData, setFormData] = useState({
     userName: '',
     commentText: '',
     isAnonymous: false
   });
+
+  const [comments, setComments] = useState(postData.comments);
 
   const handleInputChange = (event) => {
     const { name, value, checked, type } = event.target;
@@ -51,7 +52,7 @@ Form çalışmıyor. Göreviniz, kullanıcı "Gönder "e tıkladığında gönde
 
 */
 
-  
+
 
   
   return (
@@ -66,6 +67,7 @@ Form çalışmıyor. Göreviniz, kullanıcı "Gönder "e tıkladığında gönde
           name='userName'
           value={formData.userName}
           onChange={handleInputChange}
+          
         />
         <textarea
           placeholder='Ne düşünüyorsunuz?'
